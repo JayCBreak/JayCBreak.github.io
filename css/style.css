@@ -1,119 +1,89 @@
-/* Typography */
-/* Added a background colour so that the webpage is easier to look at */
-html {
-    font-family: 'Fira Sans', sans-serif;
-    scroll-behavior: smooth;
-    background-color: rgb(248, 248, 239);
-}
-
-h1,
-h2,
-h3 {
-    font-weight: 600;
-}
-
-p {
-    font-weight: 300;
-    line-height: 18px;
-}
-
-
-/* Layout */
-
-.wrapper {
-    width: 80%;
+/* Universal Selector */
+* {
     margin: 0 auto;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.flex {
-    display: flex;
-    gap: 32px;
+/* Type Selector */
+/* Using Background layering to deal with old browsers */
+html {
+    background: rgb(6, 214, 160);
+    background: linear-gradient(0deg, rgba(6, 214, 160, 1) 0%, rgba(224, 239, 218, 1) 80%);
+    background: url(../img/pexels-eberhard-grossgasteiger-1366919.webp) no-repeat center/cover;
 }
 
-/* Target every other line on the table to be a slightly darker colour for readability. */
-#playlist table tbody tr:nth-child(odd) {
-    background-color: bisque;
+ul li:nth-child(odd) {
+    font-weight: bold;
 }
 
-#features>div {
-    flex: 1;
-}
-
-/* Adds a slightly darker colour to the categories (left) side with the resulting numbers on the right standing out more because of it. */
-#features div table tbody tr th {
-    background-color: bisque;
-}
-
-#features h3 {
-    font-size: 1.3rem;
-}
-
-/* Added a bullet point png that looks like a note to match the theme of music in the webpage */
-#features div ul {
-    list-style-image: url(../img/note.png);
-    list-style-position: inside;
-    list-style-type: square;
-}
-
-/* Add a shadow to the image to make it standout a bit more */
+/* Image w/o filters other than drop-shadow */
 img {
-    max-height: 300px;
-    width: auto;
-    box-shadow: 0.2rem 0.2rem 0.5rem #333;
+    width: 100%;
+    filter: drop-shadow(5px 5px 10px #011627);
+}
+
+/* Image Filter Effects - Makes the image look nicer, tweaked like I would in photoshop */
+img:hover {
+    filter: drop-shadow(20px 20px 50px #E9F1F7) brightness(0.95) contrast(120%) saturate(110%) sepia(20%);
+}
+
+header {
+    width: 90%;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: rgba(224, 239, 218, .25);
+    border: 1px dotted #011627;
+}
+
+h1 {
+    font-size: 80px;
+    text-align: center;
 }
 
 main section {
-    padding: 60px 20px 0 20px;
+    width: 30%;
+    height: 50%;
+    padding: 10px 30px;
 }
 
-/* Added style to the links and to the nav bar */
-a {
-    font-weight: bold;
-    color: #333;
+/* Specifies the paragraph in main otherwise it also selects the footer paragraph element */
+/* Changes the paragraph to the original colour unlike everywhere else which is using #333 */
+main p {
+    color: black;
+    padding: 10px 30px;
 }
 
-/* Using the inline-block to keep everything working on the same line just maniplulate the whole block.
- * Using both padding and margin to seperate the block from other things as well as keeping it seperate
- * from itself. Finally using the line-height to keep things consistant.
- */
-nav a {
-    display: inline-block;
-    padding: 0rem 1rem;
-    background-color: bisque;
-    border: 0.1rem solid rgb(168, 151, 131);
-    text-decoration: none;
-    text-align: center;
-    font-weight: 500;
-    border-radius: 1rem;
-    margin: 0rem 1rem;
-    line-height: 3;
+main > h2 {
+    text-align: left;
+    padding-left: 10%;
 }
 
-nav a:hover {
-    color: #333;
-    font-weight: bold;
+/* Grouping Selector */
+h1,
+h2,
+h3,
+p,
+ul {
+    padding: 1rem 2rem;
 }
 
-nav a:hover {
-    background-color: rgb(214, 190, 162);
+/* Class Selector */
+.wrapper {
+    border: 3px dashed #011627;
+    box-sizing: border-box;
+    width: 80vw;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: rgba(233, 241, 247, 0.25);
+    background: linear-gradient(0deg, rgba(6, 214, 160, 1) 10%, rgba(224, 239, 218, .25) 100%);
 }
 
-/* Adding styling to the lists */
-ul,
-ol {
-    font-size: 1.0rem;
-    line-height: 2;
-}
-
-/* Change the font size as you go from 1st to 3rd */
-#features div ol li {
-    font-size: 1.2rem;
-}
-
-#features div ol li:nth-of-type(2) {
-    font-size: 1.1rem;
-}
-
-#features div ol li:nth-of-type(3) {
-    font-size: 1.0rem;
+/* At-Rule Selector */
+/* IDK what to do but this makes the background colour off-white if the user is on mac */
+@supports (-webkit-backdrop-filter: blur(1px)) {
+    html {
+        background-color: rgb(224, 239, 218);
+    }
 }
