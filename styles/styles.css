@@ -405,6 +405,7 @@ footer {
 /* ------------------  Responsive Design  ------------------ */
 /* Tablet Screen */
 @media screen and (max-width: 70em) {
+
     /* Change the About Me to be vertical for better alignment */
     main section {
         padding: 30vh 0;
@@ -431,6 +432,7 @@ footer {
 
 /* Phone Screen */
 @media screen and (max-width: 40em) {
+
     /* Change the projects container to be 1 column long */
     .projects-container {
         grid-template-columns: 1fr;
@@ -495,6 +497,7 @@ footer {
         font-size: clamp(2rem, 3rem + 4vw, 12rem);
     }
 
+    p,
     a {
         font-size: clamp(1rem, 1.2rem + 0.75vw, 5rem);
     }
