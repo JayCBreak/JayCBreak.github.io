@@ -22,7 +22,6 @@ html {
     font-weight: 100;
     box-sizing: border-box;
     background-color: var(--secondary-light);
-    scroll-behavior: smooth;
 }
 
 h1,
@@ -505,5 +504,12 @@ footer {
 
     .social-icon {
         width: 3em;
+    }
+}
+
+/* Smooth Scroll media query */
+@media(prefers-reduced-motion:no-preference) {
+    html {
+        scroll-behavior: smooth;
     }
 }
