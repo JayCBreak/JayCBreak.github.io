@@ -401,8 +401,9 @@ footer {
 }
 
 /* ------------------  Responsive Design  ------------------ */
-/* Tablet */
+/* Tablet Screen */
 @media screen and (max-width: 70em) {
+    /* Change the About Me to be vertical for better alignment */
     main section {
         padding: 30vh 0;
     }
@@ -426,8 +427,9 @@ footer {
     }
 }
 
-/* Phone */
+/* Phone Screen */
 @media screen and (max-width: 40em) {
+    /* Change the projects container to be 1 column long */
     .projects-container {
         grid-template-columns: 1fr;
     }
@@ -436,6 +438,7 @@ footer {
         flex-direction: column-reverse;
     }
 
+    /* Make the footer vertical */
     .feet {
         flex-direction: column;
     }
@@ -445,6 +448,7 @@ footer {
         justify-content: flex-end;
     }
 
+    /* Update the intro text to be on the other side and near the top */
     .intro {
         display: flex;
         align-items: flex-end;
@@ -459,6 +463,7 @@ footer {
         text-shadow: 0.2rem 0.2rem 2rem var(--primary);
     }
 
+    /* Make the navbar horizontal */
     .navbar {
         border-radius: 0;
         border-bottom-left-radius: 3em;
@@ -483,6 +488,7 @@ footer {
         margin: 0;
     }
 
+    /* Update font sizes for this small of a screen */
     h1 {
         font-size: clamp(2rem, 3rem + 4vw, 12rem);
     }
