@@ -1,209 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Assignment 2 - Recreate Bootstrap Layout - Album Example</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap" rel="stylesheet">
-        <link href="./styles/styles.css" rel="stylesheet">
-    </head>
-    <body>
-        <div class="main-container">
-        <!-- Top header  -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles/normalize.css" rel="stylesheet">
+    <link href="./styles/styles.css" rel="stylesheet">
+    <title>Final Project</title>
+</head>
+
+<body>
+    <div class="main-wrapper" id="home">
         <header>
+            <div class="intro">
+                <h1>Hi! I'm</h1>
+                <h1>Jacob</h1>
+                <h1>Chotenovsky</h1>
+            </div>
             <div class="navbar">
-                <div>
-                    <img class="logo" src="./assets/camera.webp" alt="Logo of a Camera">
-                    <p>ALBUM</p>
-                </div>
-                <div>
-                    <button>
-                        MENU
-                        <!-- Check HTML FUND. for Button code? maybe bootstrap only -->
-                    </button>
-                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Me</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact Me</a></li>
+                    </ul>
+                </nav>
             </div>
         </header>
         <main>
-            <section class="title">
-                <div>
-                    <h1>Jacob's Album</h1>
-                    <p>Find all my greatest photos in one convenient location</p>
-                    <p><a href="#" class="primary">First Button</a> <a href="#" class="secondary">Second Button</a></p>
+            <section id="about">
+                <div class="about-me">
+                    <div class="about-text">
+                        <div>
+                            <h2>About Me</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit hic quis numquam nam molestias. Aliquid placeat culpa dolorem minima aliquam ab sunt obcaecati laudantium modi, laboriosam porro non molestias consequatur repellat expedita sapiente, adipisci optio odit reprehenderit iste esse! Nesciunt provident fuga assumenda, aspernatur vitae atque cupiditate ab qui dicta?</p>
+                        </div>
+                        <div>
+                            <img src="./assets/Screenshot_Snapchat_EDIT.webp" alt="Headshot of Jacob Chotenovsky">
+                        </div>
+                    </div>
+                    <div class="langset-one">
+                        <div>
+                            <img class="programming-icon" src="./assets/c-solid.svg" alt="C Programming Language Symbol">
+                            <p>C</p>
+                        </div>
+                        <div>
+                            <img class="programming-icon" src="./assets/python.svg" alt="Python Programming Language Symbol">
+                            <p>Python 3</p>
+                        </div>
+                        <div>
+                            <img class="programming-icon" src="./assets/java.svg" alt="Java Programming Language Symbol">
+                            <p>Java</p>
+                        </div>
+                    </div>
+                    <div class="langset-two">
+                        <div>
+                            <img class="programming-icon" src="./assets/Csharp.svg" alt="C# Programming Language Symbol">
+                            <p>C#</p>
+                        </div>
+                        <div>
+                            <img class="programming-icon" src="./assets/html5.svg" alt="HTML Programming Language Symbol">
+                            <p>HTML, CSS, JS</p>
+                        </div>
+                        <div>
+                            <img class="programming-icon" src="./assets/mySQL.svg">
+                            <p>mySQL</p>
+                        </div>
+                    </div>
                 </div>
             </section>
-            <section>
-                <div class="card-container">
-                    <div class="cards">
+            <section id="projects">
+                <div class="projects-title">
+                    <h2>Projects</h2>
+                </div>
+                <div class="projects-container">
+                    <div class="cards card-one">
                         <div>
                         <div class="img-container">
-                            <img class="imgs" src="./assets/imgCastle1.webp" alt="Image of a castle in Czech taken by Jacob Chotenovsky">
+                            <img class="imgs" src="./assets/discordBot.webp" alt="Python 3 Discord Bot Image">
                         </div>
                         <div class="card-text-container">
-                            <p>This is an image of a castle in the Czech Republic!</p>
+                            <a href="#">Discord Bot</a>
+                            <p>Bring Jacob's code right into your personal chats! Highlights: User Counting, Logging.</p>
                             <div>
-                                <div class="btns">
-                                    <button class="btnView">View</button>
-                                    <button class="btnEdit"">Edit</button>
-                                </div>
-                                <small>24/08/2022</small>
+                                <small>Python 3</small>
+                                <small>10/08/2023</small>
                             </div>
                         </div>
+                        </div>
                     </div>
-                    </div>
-                    <div class="cards">
+                    <div class="cards card-two">
                         <div>
                         <div class="img-container">
-                            <img class="imgs" src="./assets/imgCzech.webp" alt="Image of a building in Czech taken by Jacob Chotenovsky">
+                            <img class="imgs" src="./assets/arduinoFinal.webp" alt="Arduino Final Project Image">
                         </div>
                         <div class="card-text-container">
-                            <p>Here is a lovely random building in the Czech Republic.</p>
+                            <a href="https://www.tinkercad.com/things/hXrms7YWrq9?sharecode=JmU5A02GBl9YFcz-WnpxIeG7UOy7xjUlpltfIasncbQ">Arduino Project</a>
+                            <p>This bright lightshow can be IR controlled and repeat strings of text across its display!</p>
                             <div>
-                                <div class="btns">
-                                    <button class="btnView">View</button>
-                                    <button class="btnEdit"">Edit</button>
-                                </div>
-                                <small>25/08/2022</small>
+                                <small>Arduino</small>
+                                <small>19/04/2023</small>
                             </div>
                         </div>
+                        </div>
                     </div>
-                    </div>
-                    <div class="cards">
+                    <div class="cards card-three">
                         <div>
                         <div class="img-container">
-                            <img class="imgs" src="./assets/imgCastle2.webp" alt="Another image of a castle in Czech taken by Jacob Chotenovsky">
+                            <img class="imgs" src="./assets/bankingSafe.webp" alt="Bank Managment Program Image">
                         </div>
                         <div class="card-text-container">
-                            <p>This is another gorgeous castle in Czech.</p>
+                            <a href="https://github.com/JayCBreak/COMP1008/tree/main/COMP1008/src/assignment2">Bank Manager</a>
+                            <p>A simple account manager and bank location tracker.</p>
                             <div>
-                                <div class="btns">
-                                    <button class="btnView">View</button>
-                                    <button class="btnEdit"">Edit</button>
-                                </div>
-                                <small>24/08/2022</small>
+                                <small>Java</small>
+                                <small>25/04/2023</small>
                             </div>
                         </div>
+                        </div>
                     </div>
-                    </div>
-                    <div class="cards">
+                    <div class="cards card-four">
                         <div>
                         <div class="img-container">
-                            <img class="imgs" src="./assets/imgSpring.webp" alt="Image of a hotspring in USA taken by Jacob Chotenovsky">
+                            <img class="imgs" src="./assets/wizardGame.webp" alt="Wizard Game for Final Project Image">
                         </div>
                         <div class="card-text-container">
-                            <p>Image of a hotspring in the USA on a trip to four corners!</p>
+                            <a href="https://github.com/JayCBreak/FinalProject">Wizard Game</a>
+                            <p>Fun multiplayer platformer. Self-hosting is the only way!</p>
                             <div>
-                                <div class="btns">
-                                    <button class="btnView">View</button>
-                                    <button class="btnEdit"">Edit</button>
-                                </div>
-                                <small>03/07/2016</small>
+                                <small>Python 3</small>
+                                <small>25/04/2019</small>
                             </div>
                         </div>
-                    </div>
-                    </div>
-                    <div class="cards">
-                        <div>
-                        <div class="img-container">
-                            <img class="imgs" src="./assets/imgTrillium.webp" alt="Image of an Ontario trillium taken by Jacob Chotenovsky">
                         </div>
-                        <div class="card-text-container">
-                            <p>Lovely red Ontario Trillium in a forest outside my Grandma's house.</p>
-                            <div class="lower">
-                                <div class="btns">
-                                    <button class="btnView">View</button>
-                                    <button class="btnEdit"">Edit</button>
-                                </div>
-                                <small>08/05/2022</small>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="cards">
-                        <div>
-                        <div class="img-container">
-                            <img class="imgs" src="./assets/imgDevil.webp" alt="Image of Devils Tower in USA taken by Jacob Chotenovsky">
-                        </div>
-                        <div class="card-text-container">
-                            <p>A distant shot of Devil's Tower in the United States.</p>
-                            <div>
-                                <div class="btns">
-                                    <button class="btnView">View</button>
-                                    <button class="btnEdit"">Edit</button>
-                                </div>
-                                <small>01/07/2016</small>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="cards">
-                        <div>
-                        <div class="img-container">
-                            <img class="imgs" src="./assets/imgBadlands.webp" alt="Image of Badlands National Park in USA taken by Jacob Chotenovsky">
-                        </div>
-                        <div class="card-text-container">
-                            <p>The rolling hills of USA's badlands. </p>
-                            <div>
-                                <div class="btns">
-                                    <button class="btnView">View</button>
-                                    <button class="btnEdit"">Edit</button>
-                                </div>
-                                <small>30/06/2016</small>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="cards">
-                        <div>
-                        <div class="img-container">
-                            <img class="imgs" src="./assets/imgRock.webp" alt="Image of an inconspicuous rock in USA taken by Jacob Chotenovsky">
-                        </div>
-                        <div class="card-text-container">
-                            <p>An inconspicuous rock at a United States National Park. Made of bright red rock!</p>
-                            <div>
-                                <div class="btns">
-                                    <button class="btnView">View</button>
-                                    <button class="btnEdit"">Edit</button>
-                                </div>
-                                <small>11/07/2016</small>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="cards">
-                        <div>
-                        <div class="img-container">
-                            <img class="imgs" src="./assets/imgArch.webp" alt="Image of a rock arch in USA taken by Jacob Chotenovsky">
-                        </div>
-                        <div class="card-text-container">
-                            <p>Facinating red rock arch at the same US National Park.</p>
-                            <div>
-                                <div class="btns">
-                                    <button class="btnView">View</button>
-                                    <button class="btnEdit"">Edit</button>
-                                </div>
-                                <small>11/07/2016</small>
-                            </div>
-                        </div>
-                    </div>
                     </div>
                 </div>
             </section>
         </main>
-        <footer>
-            <div>
-                <div>
-                    <p>Album Example © Jacob Chotenovsky with inspiration from <a href="https://getbootstrap.com/docs/4.0/examples/album/">Bootstrap Album</a></p>
-                    <p>New to layouts? Check out <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox">Flexbox</a> or <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids">Grid</a> to get started!</p>
+        <footer id="contact">
+            <div class="feet">
+                <div class="social">
+                    <div>
+                        <img>
+                        <a href="https://www.linkedin.com/in/jacob-chotenovsky/">Linkedin</a>
+                    </div>
+                    <div>
+                        <img>
+                        <a href="https://github.com/JayCBreak/">GitHub</a>
+                    </div>
+                    <div>
+                        <img>
+                        <a href="mailto:ask@jacobchotenovsky.com">ask@jacobchotenovsky.com</a>
+                    </div>
                 </div>
                 <div>
-                    <a href="#">Back to top</a>
+                    <a href="#home">Back To Top</a>
                 </div>
             </div>
         </footer>
-        </div>
-    </body>
+    </div>
+</body>
+
 </html>

@@ -1,224 +1,294 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ------------------  FONT IMPORT ------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Outfit&display=swap');
+
+@font-face {
+    font-family: 'danielregular';
+    src: url('../assets/daniel-fontfacekit/Daniel-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
+@font-face {
+    font-family: 'silkscreennormal';
+    src: url('../assets/Silkscreen-fontfacekit/slkscr-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ------------------  TYPOGRAPHY  ------------------ */
 html {
-    scroll-behavior: smooth;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 100;
+    box-sizing: border-box;
+    background-color: var(--secondary-light);
 }
 
-/* Variables */
-:root {
-    --white: #eeeeee;
-    --main: #3c1518;
-    --light-main: #491f22;
-    --lighter-main: #b69a9c;
-    --lightest-main: #e9dedf;
-    --primary: #D62828;
-    --secondary: #003049;
-}
-
-/* Typography */
-
-/* Body Content Styling */
-body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.125rem;
-    line-height: 1.6;
-}
-
-/* Headings Styling */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 h1 {
-    font-size: 3rem;
+    font-family: 'danielregular', cursive;
+    font-size: clamp(6rem, 3rem + 4vw, 12rem);
+    font-weight: 400;
+    margin: 0;
 }
 
-/* Default Link Decorating */
+h2 {
+    font-family: 'silkscreennormal', cursive;
+    font-size: clamp(4rem, 2rem + 3vw, 8rem);
+    font-weight: 400;
+}
+
+p,
 a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: clamp(2rem, 1.2rem + 0.75vw, 5rem);
     text-decoration: none;
 }
 
 /* LoVe Fears HAte */
 a:link {
-    color: blue;
-}
-
-a:visited {
-    color: purple;
-}
-
-a:focus {
-    border: 1px solid red;
-}
-
-a:hover {
-    background-color: var(--lightest-main);
-    border-radius: 0.2em;
-}
-
-a:active {
-    background-color: var(--primary);
-    border-radius: 0.2em;
-}
-
-button {
-    cursor: pointer;
-}
-
-/* Layout & Apperance */
-.primary {
-    background-color: var(--primary);
-}
-
-.secondary {
-    background-color: var(--light-main);
-}
-
-/* Header Styling */
-header {
-    display: flex;
-    grid-area: header;
-    background-color: var(--main);
-    color: var(--white);
-    align-items: center;
-    justify-content: center;
-    padding: 0.75em;
-}
-
-.navbar {
-    display: flex;
-    width: 70vw;
-    justify-content: space-between;
-}
-
-.navbar div {
-    display: flex;
-    align-items: center;
-}
-
-/* Had to use the filter property since drop-shadow had weird boxing around the image borders. */
-.logo {
-    float: left;
-    height: 2em;
-    width: auto;
-    margin-right: 1em;
-    filter: drop-shadow(0 8px 8px rgba(255, 255, 255, 0.5));
-
-}
-
-.navbar>div {
-    font-weight: bold;
-}
-
-.navbar button {
-    border: 2px solid var(--light-main);
-    background-color: var(--main);
-    border-radius: 0.2em;
-    padding: 0.5rem 0.75rem;
     color: var(--light);
 }
 
-/* Setup Grid (although I don't really leverage its power since it is set to default layout) */
-.main-container {
-    display: grid;
-    grid-template-areas:
-        "header"
-        "title"
-        "main"
-        "footer";
+a:visited {
+    text-decoration: none;
+    color: var(--off);
 }
 
-main {
-    display: block;
+a:focus {
+    text-decoration: none;
+    color: var(--tertiary);
 }
 
-/* Setup the first section as the title of the webpage */
-.title {
-    grid-area: title;
-    background-color: var(--white);
-    padding: 4rem 2rem;
+a:hover {
+    text-decoration: none;
+    color: var(--tertiary);
+}
+
+a:active {
+    text-decoration: none;
+    color: var(--light);
+}
+
+ol,
+li {
+    margin-left: 0;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+small {
+    font-size: clamp(1rem, 0.25rem + 0.75vw, 3rem);
+}
+
+/* ------------------  Variables  ------------------ */
+:root {
+    --primary: #fe9601;
+    --secondary: #014335;
+    --secondary-dark: #030605;
+    --secondary-clear: #030605bd;
+    --secondary-light: #009777;
+    --tertiary: #dc0d00;
+    --light: #eeeeee;
+    --off: #ffc676;
+}
+
+/* ------------------  LAYOUT & APPEARANCE ------------------ */
+header {
+    height: 100vh;
+    background-image: url(../assets/backCover.webp);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.intro {
+    padding: 10em 0;
+    padding-left: 10vw;
+}
+
+.intro h1 {
+    text-shadow: 0.2rem 0.2rem 2rem var(--secondary-dark);
+}
+
+/* Have to pass the display:flex; flex-grow: 1; through the whole navbar so the li can be space-between */
+.navbar {
+    display: flex;
+    background-color: var(--secondary-clear);
+    border-top-left-radius: 5em;
+    border-bottom-left-radius: 5em;
+    margin-top: 8vh;
+    margin-bottom: auto;
+    border: 2px solid black;
+}
+
+.navbar nav {
+    margin: 6em 0;
+    padding: 3em 0;
+    padding-right: 3em;
+    display: flex;
+    flex-grow: 1;
+}
+
+.navbar ul {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.navbar li {
+    text-decoration: none;
+    margin: 1em 0;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+/* ------------------  About Me Section  ------------------ */
+main>section:first-child {
+    padding: 50vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 80vw;
+}
+
+.about-text {
+    order: 2;
+    display: flex;
+    margin: auto 5vw;
+    padding: 5em;
+    background-color: var(--primary);
+    border: 2px var(--tertiary) solid;
+    border-radius: 5em;
+    max-width: 50%
+}
+
+.about-text:hover {
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+.about-text div:first-child {
+    padding-right: 4vw;
+    flex-basis: 70%;
+}
+
+.about-text div:last-child {
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.about-text img {
+    min-width: 10vw;
+    width: 100%;
+    height: auto;
+    border-radius: 4em;
+    border: 1px solid var(--secondary);
+    margin-top: 3 vw;
+}
+
+.about-text img:hover {
+    filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.5));
+}
+
+.programming-icon {
+    width: 5em;
+    height: auto;
+    filter: saturate(0%) contrast(200%);
+}
+
+.langset-one {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    margin: auto 0;
+    color: var(--light);
+    min-width: 15em;
 }
 
-.title div a {
-    border: 1px solid transparent;
-    border-radius: 0.25em;
-    color: var(--white);
-    padding: 0.5rem 0.75rem;
+.langset-two {
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto 0;
+    color: var(--light);
+    min-width: 15em;
 }
 
-.title div a:link {
-    color: var(--white);
-}
-
-.title div a:visited {
-    color: var(--white);
-}
-
-.title div a:focus {
-    border: 1px dotted darkred;
-}
-
-.title div a:hover {
-    color: var(--white);
+/* ------------------  Projects Section  ------------------ */
+main section:last-child {
+    display: flex;
+    flex-direction: column;
+    padding: 50vh 0;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
     background-color: var(--secondary);
 }
 
-.title div a:active {
-    border: 1px dotted darkred;
+.projects-title {
+    color: var(--light);
 }
 
-.title div p+p {
-    padding-top: 1.5em;
-}
-
-/* Setup second section for holding cards of images */
-main section:nth-of-type(2) {
-    grid-area: main;
-    background-color: var(--lightest-main);
-    text-align: center;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-}
-
-/* Container for the cards to be in, positioned to be in the middle */
-.card-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.projects-container {
+    padding-top: 5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    margin: 0 auto;
     max-width: 70vw;
-    margin-right: auto;
-    margin-left: auto;
+    gap: 15vh 5vw;
 }
 
-/* Setup the cards and divs within to have margins, borders, and radii */
 .cards {
-    flex: 0 0 33.3333333333%;
-    max-width: 33.3333333333%;
     padding-left: 0.8em;
     padding-right: 0.8em;
 }
 
+.cards:hover {
+    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.5));
+}
+
 .cards>div {
-    border: 1px solid var(--lighter-main);
+    display: flex;
+    flex-direction: column;
     border-radius: 0.5em;
-    margin-bottom: 1.5em;
-    background-color: var(--white);
+    background-color: var(--primary);
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 3em;
+    border-top-right-radius: 3em;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
 }
 
 .img-container {
-    border-top-left-radius: 0.5em;
-    border-top-right-radius: 0.5em;
+    flex-grow: 1;
 }
 
 /* Align the images so they are properly spaced and don't exceed their containers */
@@ -230,18 +300,42 @@ main section:nth-of-type(2) {
     width: auto;
     max-height: 100%;
     max-width: 100%;
-    border-top-left-radius: 0.5em;
-    border-top-right-radius: 0.5em;
+    border-top-left-radius: 3em;
+    border-top-right-radius: 3em;
+    border: 1px solid var(--tertiary);
 }
 
 .imgs:hover {
     filter: brightness(100%);
 }
 
-/* Setup the text/buttons below image */
+/* Setup the text below image */
 .card-text-container {
-    padding: 1em;
+    padding: 1em 2em;
+    padding-top: 2.5em;
     text-align: left;
+    color: var(--secondary);
+}
+
+/* LoVe Fears HAte */
+.card-text-container a:link {
+    color: var(--secondary);
+}
+
+.card-text-container a:visited {
+    color: var(--secondary-dark);
+}
+
+.card-text-container a:focus {
+    color: var(--secondary-light);
+}
+
+.card-text-container a:hover {
+    color: var(--secondary-light);
+}
+
+.card-text-container a:active {
+    color: var(--light);
 }
 
 .card-text-container p {
@@ -252,55 +346,119 @@ main section:nth-of-type(2) {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 0.25em;
 }
 
-.btns button {
-    flex: 0 1 auto;
-    display: inline-block;
-    white-space: nowrap;
-    padding: 0.3rem 0.5rem;
-    border: 1px solid var(--main);
-    border-radius: 0.5em;
-    background-color: var(--white);
-}
-
-/* Have to set the radii so they are not curved in between the buttons */
-.btns .btnView {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.btns .btnEdit {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-/* Setup footer for content */
+/* ------------------  Footer Section  ------------------ */
 footer {
-    display: flex;
-    grid-area: footer;
-    align-items: center;
-    justify-content: center;
-    color: var(--light-main);
+    border-top: 1px solid #ccc;
+    width: 100%;
 }
 
-/* Position div within footer */
-footer>div {
+.feet {
+    margin: 10vh auto;
     display: flex;
-    width: 70vw;
     justify-content: space-between;
-    padding-top: 4vw;
-    padding-bottom: 4vw;
-}
-
-footer div div {
-    display: flex;
-    align-items: center;
-}
-
-/* Have to do this so the p elements stack vertically */
-footer div>div {
-    flex-direction: column;
-    flex-wrap: wrap;
     align-items: flex-start;
+    max-width: 80vw;
+}
+
+.social div {
+    margin: 3em 0;
+}
+
+.feet>div:last-child {
+    margin: 3em 0;
+}
+
+/* ------------------  Responsive Design  ------------------ */
+/* Tablet */
+@media screen and (max-width: 70em) {
+    main section {
+        padding: 30vh 0;
+    }
+
+    .about-me {
+        flex-direction: column;
+    }
+
+    .about-text {
+        order: 1;
+    }
+
+    .langset-one {
+        margin-top: 5em;
+        order: 2;
+    }
+
+    .langset-two {
+        margin-bottom: 5em;
+        order: 3;
+    }
+}
+
+/* Phone */
+@media screen and (max-width: 40em) {
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-text {
+        flex-direction: column-reverse;
+    }
+
+    .feet {
+        flex-direction: column;
+    }
+
+    header {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+
+    .intro {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        margin: 40vh 0;
+        padding: 0;
+        padding-right: 10vw;
+        color: var(--light);
+    }
+
+    .intro h1 {
+        text-shadow: 0.2rem 0.2rem 2rem var(--primary);
+    }
+
+    .navbar {
+        border-radius: 0;
+        border-bottom-left-radius: 3em;
+        border-bottom-right-radius: 3em;
+        margin: 0;
+        border: 2px solid black;
+    }
+
+    .navbar nav {
+        margin: 2em;
+        padding: 0;
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .navbar li {
+        margin: 0;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 3rem + 4vw, 12rem);
+    }
+
+    a {
+        font-size: clamp(1rem, 1.2rem + 0.75vw, 5rem);
+    }
 }
