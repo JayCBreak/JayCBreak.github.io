@@ -157,6 +157,7 @@ header {
 }
 
 /* ------------------  About Me Section  ------------------ */
+/* Need to be highly specific with this selector */
 main>section:first-child {
     padding: 50vh 0;
     display: flex;
@@ -171,6 +172,7 @@ main>section:first-child {
     max-width: 80vw;
 }
 
+/* Adding a bubble look to the text */
 .about-text {
     order: 2;
     display: flex;
@@ -495,5 +497,9 @@ footer {
 
     a {
         font-size: clamp(1rem, 1.2rem + 0.75vw, 5rem);
+    }
+
+    .social-icon {
+        width: 3em;
     }
 }
