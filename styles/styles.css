@@ -188,15 +188,15 @@ main>section:first-child {
 
 /* LoVe Fears HAte */
 .about-text a:link {
-    color: var(--primary);
+    color: var(--secondary);
 }
 
 .about-text a:visited {
-    color: var(--tertiary);
+    color: var(--secondary-dark);
 }
 
 .about-text a:focus {
-    color: var(--);
+    color: var(--tertiary);
 }
 
 .about-text a:hover {
